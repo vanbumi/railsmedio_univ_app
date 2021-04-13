@@ -8,13 +8,80 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    
   </head>
 
   <body>
-    <%= link_to 'home', root_path %>
-    <%= link_to 'new courses', courses_new_path %>
-    <%= link_to 'about', about_path %>
+    <header>
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">one</a></li>
+        <li><a href="#!">two</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">three</a></li>
+      </ul>
+      <ul id="dropdown2" class="dropdown-content">
+        <li><a href="#!">one</a></li>
+        <li><a href="#!">two</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">three</a></li>
+      </ul>
+      <nav class="navbar blue lighten-1">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo right">Skill Akademi</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <!-- menu 1 top -->
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+              <li><a href="#">Courses</a></li>
+              <li><a href="#">Enrolments</a></li>
+              <!-- Dropdown Trigger -->
+              <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+            <!-- menu 2 burger -->
+            <ul class="sidenav" id="mobile-demo">
+              <li><a href="#">Sass</a></li>
+              <li><a href="#">Components</a></li>
+              <li><a href="#">Javascript</a></li>
+              <!-- Dropdown Trigger -->
+              <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Account<i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-    <%= yield %>
+    <main>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
+
+    <footer class="page-footer blue lighten-1">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">TechCademy</h5>
+            <p class="grey-text text-lighten-4">You can rely your bright future on us. We have exelent education programs to boost your career.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Information</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Help</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Class Programs</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © Copyright TechCademy International 
+        <a class="grey-text text-lighten-4 right" href="#!">About</a>
+        </div>
+      </div>
+    </footer>
+
   </body>
 </html>

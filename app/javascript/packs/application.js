@@ -8,9 +8,15 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'materialize-css/dist/js/materialize'
-
+//require("jquery")
+import "jquery"
 //= require materialize
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+$( document ).on('turbolinks:load', function() {
+    $('.sidenav').sidenav();
+    $(".dropdown-trigger").dropdown({ hover: false });
+})
